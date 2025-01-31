@@ -1,5 +1,5 @@
 "use strict";
-
+import { getRandomNumber } from "../utils/utils.js";
 //Global variables
 let userChoice;
 let compChoice;
@@ -35,7 +35,8 @@ function klikScissors() {
 function computerChooses() {
   //console.log("computer chooses, user choise:", userChoice);
   cleanUpRPCClasses();
-  const randomNumber = Math.floor(Math.random() * 3);
+  //const randomNumber = Math.floor(Math.random() * 3);
+  getRandomNumber(); //Henter fra utils fil
 
   if (randomNumber === 0) {
     compChoice = "rock";
