@@ -1,0 +1,44 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+  background-color: lightyellow;
+}
+.game_box {
+  background-color: aquamarine;
+  border-radius: 30px;
+  margin: 10rem;
+  padding: 2rem;
+}
+button {
+  background-color: hotpink;
+  border-color: pink;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 0.5rem;
+  text-transform: uppercase;
+}
+h1 {
+  text-transform: uppercase;
+}
+p {
+  font-size: x-large;
+  text-transform: uppercase;
+}
+
+#comp_attempts {
+  color: hotpink;
+}
+
+.button_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+.celebration {
+  border-color: deeppink;
+  border-width: 1rem;
+}
