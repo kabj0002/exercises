@@ -1,0 +1,23 @@
+/* Styling: Listeelementerne i brødkrummestien skal optræde på en række og
+være opdelt af en skråstreg (/) eller lignende symbol.
+Skråstregen skal ikke være en del af det klikbare link. */
+body {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+  color: white;
+  background-color: red;
+}
+ul {
+  display: flex;
+  list-style-type: none;
+}
+button {
+  background-color: white;
+  border-radius: 30px;
+  padding: 1rem;
+}
+a {
+  color: white;
+}
