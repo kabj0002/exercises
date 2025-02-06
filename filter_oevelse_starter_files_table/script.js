@@ -34,8 +34,70 @@ const vehicles = [
   { type: "Knallert", fuel: "Benzin", passengers: 1, ownedBy: "Jonas" },
   { type: "Løbehjul", passengers: 1, isElectric: true },
 ];
-const tbodyPointer = document.querySelector("tbody");
 
+//Vi laver knapper og tilknytter filter til hver knap
+document.querySelectorAll("button").forEach((btn) => {
+  console.log("button", btn.dataset.filter); //Console logger data-filter fra HTML
+
+  btn.addEventListener("click", () => {
+    filterHandler(btn.dataset.filter);
+  }); //Her har vi lavet en "anonym function"
+});
+
+function filterHandler(filter) {
+  console.log("filterHandler", filter);
+  let filterArr;
+
+  switch (filter) {
+    case "all":
+      filterArr = vehicles;
+      break;
+
+    case "isElectric":
+      filterArr = alleElDrevneFartoejer;
+      break;
+
+    case "moreThanOnePassenger":
+      filterArr = alleFartøjerMerEnn2Saeter;
+      break;
+
+    case "jonasOwnedElVeh":
+      filterArr = alleJonasElFartoejer;
+      break;
+
+    case "ryebread":
+      filterArr = alleRugbroedDrevneFartoejerMerEnn1;
+      break;
+  }
+  showTheseVehicles(filterArr);
+}
+
+//Laver buttons i JS (anden måde at gøre det på uden at lave buttons i HTML)
+// const div = document.querySelector("div");
+
+// div.innerHTML += `<button id="all_btn">Alle</button>`;
+// div.innerHTML += `<button id="el_btn">Electric</button>`;
+// div.innerHTML += `<button id="pass_btn">Mere end 1 passenger</button>`;
+// div.innerHTML += `<button id="jonel_btn">Jonas el fartøjer</button>`;
+// div.innerHTML += `<button id="rugbr_btn">Rugbrød</button>`;
+
+// document.querySelector("#all_btn").addEventListener("click", () => {
+//   showTheseVehicles(vehicles);
+// });
+// document.querySelector("#el_btn").addEventListener("click", () => {
+//   showTheseVehicles(alleElDrevneFartoejer);
+// });
+// document.querySelector("#pass_btn").addEventListener("click", () => {
+//   showTheseVehicles(alleFartøjerMerEnn2Saeter);
+// });
+// document.querySelector("#jonel_btn").addEventListener("click", () => {
+//   showTheseVehicles(alleJonasElFartoejer);
+// });
+// document.querySelector("#rugbr_btn").addEventListener("click", () => {
+//   showTheseVehicles(alleRugbroedDrevneFartoejerMerEnn1);
+// });
+
+const tbodyPointer = document.querySelector("tbody");
 //viser alle el drevne fartøjer
 const alleElDrevneFartoejer = vehicles.filter((veh) => veh.isElectric);
 //console.log("Alle eldrevne fartøjer", alleElDrevneFartoejer);
@@ -43,130 +105,69 @@ const alleElDrevneFartoejer = vehicles.filter((veh) => veh.isElectric);
 const alleFartøjerMerEnn2Saeter = vehicles.filter((veh) => veh.passengers > 2);
 //console.log("Alle fartøjer med mere end 2 sæder", alleFartøjerMerEnn2Saeter);
 //alle fartøjer el-drevne fartøjer ejet af Jonas
-const alleJonasElFartoejer = alleElDrevneFartoejer.filter(
-  (veh) => veh.ownedBy === "Jonas"
+const alleJonasElFartoejer = vehicles.filter(
+  (veh) => veh.isElectric && veh.ownedBy === "Jonas"
 );
 // console.log(
 //   "Alle fartøjer el-drevne fartøjer ejet af Jonas",
 //   alleJonasElFartoejer
 // );
 //alle rugbrøds drevne fartøjer med plads til mere end en.
-const alleFartøjerMerEnn1Passenger = vehicles.filter(
-  (veh) => veh.passengers > 1
-);
-//console.log("alleFartøjerMerEnn1Passenger", alleFartøjerMerEnn1Passenger);
-const alleRugbroedDrevneFartoejerMerEnn1 = alleFartøjerMerEnn1Passenger.filter(
-  (veh) => veh.fuel === "Rugbrød"
+const alleRugbroedDrevneFartoejerMerEnn1 = vehicles.filter(
+  (veh) => veh.fuel === "Rugbrød" && veh.passengers > 1
 );
 // console.log(
 //   "Alle rugbrøds drevne fartøjer med plads til mere end en",
 //   alleRugbroedDrevneFartoejerMerEnn1
 // );
 
-//Filtrering 1
-// function klikFiltrering1() {
-//   console.log("Filtrering 1");
-//   document
-//     .querySelector(".filtrering_1")
-//     .addEventListener("click", showTheseVehicles1);
-// }
-
-showTheseVehicles1(alleElDrevneFartoejer);
-
-function showTheseVehicles1(arr) {
-  arr.forEach((each) => {
-    tbodyPointer.innerHTML += `<tr>
-  <td>${each.type}</td>
-  <td>${each.fuel}</td>
-  <td>${each.passengers}</td> 
-  <td>${each.stops}</td> 
-  <td>${each.ownedBy}</td>
-  <td>${each.isElectric}</td>
-  <td>${each.isTandem}</td>
-</tr>`;
-  });
-}
-
-//Filtrering 2
-showTheseVehicles2(alleFartøjerMerEnn2Saeter);
-
-function showTheseVehicles2(arr) {
-  arr.forEach((each) => {
-    tbodyPointer.innerHTML += `<tr>
-  <td>${each.type}</td>
-  <td>${each.fuel}</td>
-  <td>${each.passengers}</td> 
-  <td>${each.stops}</td> 
-  <td>${each.ownedBy}</td>
-  <td>${each.isElectric}</td>
-  <td>${each.isTandem}</td>
-</tr>`;
-  });
-}
-
-//Filtrering 3
-showTheseVehicles3(alleJonasElFartoejer);
-
-function showTheseVehicles3(arr) {
-  arr.forEach((each) => {
-    tbodyPointer.innerHTML += `<tr>
-  <td>${each.type}</td>
-  <td>${each.fuel}</td>
-  <td>${each.passengers}</td> 
-  <td>${each.stops}</td> 
-  <td>${each.ownedBy}</td>
-  <td>${each.isElectric}</td>
-  <td>${each.isTandem}</td>
-</tr>`;
-  });
-}
-
-//Filtrering 4
-showTheseVehicles4(alleRugbroedDrevneFartoejerMerEnn1);
-
-function showTheseVehicles4(arr) {
-  arr.forEach((each) => {
-    tbodyPointer.innerHTML += `<tr>
-  <td>${each.type}</td>
-  <td>${each.fuel}</td>
-  <td>${each.passengers}</td> 
-  <td>${each.stops}</td> 
-  <td>${each.ownedBy}</td>
-  <td>${each.isElectric}</td>
-  <td>${each.isTandem}</td>
-</tr>`;
-  });
-}
-
 //Filtrering ALLE
-//Nedenstående var i opgaven fra tidligere!!!
 showTheseVehicles(vehicles); //Denne filtrerer. HVis man ændrer constant her viser den den konstant man ønsker
 
 function showTheseVehicles(arr) {
+  tbodyPointer.innerHTML = "";
   arr.forEach((each) => {
     tbodyPointer.innerHTML += `<tr>
-  <td>${each.type}</td>
-  <td>${each.fuel}</td>
-  <td>${each.passengers}</td>
-  <td>${each.stops}</td>
-  <td>${each.ownedBy}</td>
-  <td>${each.isElectric}</td>
-  <td>${each.isTandem}</td>
+  <td>${beautify(each.type)}</td>
+  <td>${beautify(each.fuel)}</td>
+  <td>${beautify(each.passengers)}</td>
+  <td>${beautify(each.stops)}</td>
+  <td>${beautify(each.ownedBy)}</td>
+  <td>${beautify(each.isElectric)}</td>
+  <td>${beautify(each.isTandem)}</td>
 </tr>`;
   });
-  //   if (each.stops === undefined) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   } //denne virker ikke?
+
+  //Fjerner undefined i tabel (1 løsning). Sætter det ind i tabellen også fjerne det igen
+  // document.querySelectorAll("td").forEach((cell) => {
+  //   if (cell.textContent === "undefined") {
+  //     cell.textContent = "";
+  //   }
+  // });
 }
-
-//if statement der gør at each.stops denne ikke vises hvis det er undefined (er kun med på 1)
-
 // Lav nogle if statements i showTheseVehicles funktionen så tabellen bliver
 //smukkere: uden undefined og tomme felter og true;
+//Fjerner undefined i tabel (anden løsning). Fjerner det inden man sætter det ind i tabellen.
 
-// Flyt filtreringerne over på 4 knapper der viser de filtreringer der før var
-//hardcodede + 1 knap til at vise alle (ufiltreret)
-
-// Style tabellen endnu mere
+//1 måde at gøre det på
+// function beautify(str) {
+//   if (str === undefined) {
+//     str = "-";
+//   }
+//   if (str === true) {
+//     str = "X";
+//   }
+//   return str;
+// }
+//Anden måde at gøre det på (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+function beautify(str) {
+  switch (str) {
+    case undefined:
+      str = "-";
+      break;
+    case true:
+      str = "X";
+      break;
+  }
+  return str;
+}
