@@ -8,6 +8,7 @@
 //Lav en dropdown (select element) der kan skifte sproget i teksten mellem
 //tysk og dansk (de og da)
 
+//Her er mit første udkast
 //Array
 // const texts = {
 //   de: {
@@ -76,6 +77,7 @@
 //   result.textContent = `You chose ${event.target.value}`;
 // });
 
+//Blev nødt til at spørge chatgpt om hjælp for at komme i mål..
 const texts = {
   de: {
     texts: [
