@@ -134,9 +134,10 @@ function showTheseVehicles(arr) {
   <td>${beautify(each.stops)}</td>
   <td>${beautify(each.ownedBy)}</td>
   <td>${beautify(each.isElectric)}</td>
-  <td>${beautify(each.isTandem)}</td>
+  <td>${beautify(each.isTandem ? "X" : "-")}</td> 
 </tr>`;
   });
+  //Ninja kodning hvor man får X hvis tandem er true og - hvis det er false
 
   //Fjerner undefined i tabel (1 løsning). Sætter det ind i tabellen også fjerne det igen
   // document.querySelectorAll("td").forEach((cell) => {
@@ -171,3 +172,8 @@ function beautify(str) {
   }
   return str;
 }
+
+//Random filter noter fra undervisning
+// function getFee(isMember) {
+//   return isMember ? "$2.00" : "$10.00";
+// }                     true      false

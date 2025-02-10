@@ -93,7 +93,22 @@ const texts = {
   },
 };
 
-// Function til at opdatere tekst i DOM
+//Gennemgang med Klaus
+// document
+//   .querySelector(".choose_language")
+//   .addEventListener("change", languageChange);
+
+// function languageChange(event) {
+//   console.log(event.target.value);
+//   locale = document.querySelector(".choose_language").value;
+//   console.log("TEXTS", texts[locale].texts);
+//   texts[locale].texts.forEach((element) => {
+//     document.querySelector(element.location).textContent = element.text;
+//   });
+// }
+// let locale = "da";
+
+// Function til at opdatere tekst i DOM (min løsning)
 function showLanguage(language) {
   const selectedTexts = texts[language]?.texts;
   if (!selectedTexts) return;

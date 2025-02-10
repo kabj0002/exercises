@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="theme_switchers.js"></script>
+  </head>
+  <body data-theme="hawaii">
+    <header>
+      <h1>Theme Switcher</h1>
+      <label>
+        Choose theme:
+        <select class="choose_theme" name="theme">
+          <option value="">Select theme</option>
+          <option data-filter="light" value="light">Light</option>
+          <option data-filter="dark" value="dark">Dark</option>
+          <option data-filter="hawaii" value="hawaii">Hawaii</option>
+        </select>
+      </label>
+    </header>
+    <main>
+      <h3>Content</h3>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors"
+        >Info om attribut selectors</a
+      >
+    </main>
+    <footer>
+      <h2>Footer</h2>
+    </footer>
+  </body>
+</html>

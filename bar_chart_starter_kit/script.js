@@ -10,7 +10,7 @@
 //og bestemme din søjles højde.
 
 const list = document.querySelector("ul");
-
+const li = document.createElement("li");
 const barArray = [];
 
 setInterval(generateBars, 1000);
@@ -30,4 +30,14 @@ function generateBars() {
     barArray.shift(); //Fjerner det første i arrayet
     list.removeChild(list.firstElementChild); //sørger for at første søjle fjernes så der altid er 20 søjler
   }
+  // console.log(barArray);
+  // renderChart();
 }
+// function renderChart() {
+//   barArray.forEach(element, (index) => {
+//     document.querySelectorAll("li")[index] = style.setProperty(
+//       "--height",
+//       barArray[index]
+//     );
+//   });
+//}

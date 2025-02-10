@@ -49,3 +49,17 @@ tfoot th {
 tfoot td {
   font-weight: bold;
 }
+
+/* Attribute selectors */
+[data-filter="isElectric"] {
+  color: blue;
+  border-color: blue;
+}
+[data-filter="ryebread"] {
+  color: brown;
+  border-color: brown;
+}
+
+[data-filter="moreThanOnePassenger"] {
+  color: white;
+}

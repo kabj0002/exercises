@@ -18,3 +18,5 @@ const strUpper1 = str1.substring(0, 1).toUpperCase();
 console.log(strUpper1);
 const result1 = strUpper1 + str1.slice(1);
 console.log(result1);
+
+//Dette er brugbart hvis man får en del data som er tastet dårligt ind med f.eks. lille forbogstv osv.

@@ -1,0 +1,12 @@
+body [data-theme="hawaii"] {
+  background-color: hotpink;
+}
+
+body [data-theme="lys"] {
+  background-color: beige;
+}
+
+body [data-theme="dark"] {
+  background-color: darkgreen;
+}
+/* --header-bg-col: ; */
