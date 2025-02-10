@@ -29,7 +29,5 @@ document.querySelector("select").addEventListener("change", selectChange);
 
 function selectChange(event) {
   console.log("change", event.target.value);
-
-  // man kan også gøre sådan her i stedet for⬇
-  //console.log(document.querySelector("select").value);
+  document.body.setAttribute("data-theme", event.target.value);
 }

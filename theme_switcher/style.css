@@ -1,12 +1,73 @@
-body [data-theme="hawaii"] {
-  background-color: hotpink;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--body-bg-col);
+  padding: 1rem;
+}
+header {
+  background-color: var(--header-bg-col);
+  color: var(--header-text-col);
+  border: 0.5rem solid var(--header-border-col);
+  border-radius: 30px;
+  text-align: center;
+  padding: 2rem;
+}
+main {
+  background-color: var(--main-bg-col);
+  color: var(--main-text-col);
+  border-radius: 30px;
+  text-align: center;
+  padding: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+footer {
+  background-color: var(--footer-bg-col);
+  color: var(--footer-text-col);
+  border-radius: 30px;
+  text-align: center;
+  padding: 2rem;
 }
 
-body [data-theme="lys"] {
-  background-color: beige;
+body[data-theme="hawaii"] {
+  --body-bg-col: hotpink;
+  --header-bg-col: turquoise;
+  --header-text-col: blue;
+  --header-border-col: blue;
+  --main-bg-col: yellow;
+  --main-text-col: blue;
+  --footer-bg-col: chartreuse;
+  --footer-text-col: blue;
 }
 
-body [data-theme="dark"] {
-  background-color: darkgreen;
+body[data-theme="light"] {
+  --body-bg-col: white;
+  --header-bg-col: rgb(232, 218, 205);
+  --header-text-col: rgb(38, 15, 1);
+  --header-border-col: rgb(38, 15, 1);
+  --main-bg-col: white;
+  --main-text-col: rgb(38, 15, 1);
+  --footer-bg-col: rgb(232, 218, 205);
+  --footer-text-col: rgb(38, 15, 1);
 }
-/* --header-bg-col: ; */
+
+body[data-theme="dark"] {
+  --body-bg-col: rgb(3, 43, 3);
+  --header-bg-col: rgb(36, 36, 36);
+  --header-text-col: rgb(198, 246, 198);
+  --header-border-col: rgb(198, 246, 198);
+  --main-bg-col: rgb(3, 43, 3);
+  --main-text-col: rgb(198, 246, 198);
+  --footer-bg-col: rgb(36, 36, 36);
+  --footer-text-col: rgb(198, 246, 198);
+}
+
+body[data-theme="tulips"] {
+  --body-bg-col: rgb(143, 9, 9);
+  --header-bg-col: rgb(177, 13, 111);
+  --header-text-col: rgb(255, 173, 254);
+  --header-border-col: rgb(198, 246, 198);
+  --main-bg-col: rgb(116, 210, 28);
+  --main-text-col: darkgreen;
+  --footer-bg-col: rgb(241, 67, 24);
+  --footer-text-col: rgb(255, 173, 254);
+}
