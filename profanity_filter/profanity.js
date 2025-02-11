@@ -75,3 +75,5 @@ closeButton.addEventListener("click", () => {
 // Husk evt. at kommentere din kode for at forklare, hvordan de forskellige dele fungerer.
 
 //Et flag er en boolian variabel (true/false)
+
+//Har brugt hjælp fra https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
