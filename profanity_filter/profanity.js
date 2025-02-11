@@ -39,6 +39,7 @@ showButton.addEventListener("click", () => {
     dialog.showModal();
   } else {
     replaceBadWithGood();
+    document.body.setAttribute("data-color", theText.target.value); //Giver baggrund gul farve
   }
 });
 
@@ -47,23 +48,6 @@ closeButton.addEventListener("click", () => {
   dialog.close();
 });
 
-// curseWords.forEach((element) => console.log(element));
-
-// document.querySelector("button").addEventListener("click", replaceBadWithGood);
-// function replaceBadWithGood(curseWords) {
-//   return curseWords ? bad : good;
-// }
-
-//Random filter noter fra undervisning
-// function getFee(isMember) {
-//   return isMember ? "$2.00" : "$10.00";
-// }                     true      false
-
-// function replaceBadWithGood() {
-//   console.log(replaceBadWithGood);
-//   const theReplaceAllText = theText.replaceAll.forEach(bad, good); //Skifter nogle ud med alle alle steder i string.
-//   console.log(theReplaceAllText);
-//}
 // Lav en funktion, der erstatter de "dårlige" ord med de "gode" fra det udleverede
 // array. Hvis teksten allerede er opdateret (ingen "dårlige" ord), skal der vises
 // en <dialog>, der informerer brugeren om dette. Dette kan laves simpelt med et
