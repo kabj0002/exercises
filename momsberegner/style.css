@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: azure;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 50%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  width: 25%;
+  margin-bottom: 3rem;
+}

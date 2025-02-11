@@ -1,0 +1,7 @@
+/* Styling når man gætter rigtig tal!*/
+.input-win {
+  border: 1rem solid green;
+  border-radius: 40px;
+  width: 30%;
+  text-align: center;
+}
