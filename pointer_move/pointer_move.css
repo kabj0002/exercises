@@ -1,0 +1,18 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(600, var(--saturation, 50%), var(--lightness, 50%));
+  transition: background-color 0.1s ease;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+div {
+  background-color: aquamarine;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  border-radius: 40px;
+}
