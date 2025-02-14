@@ -11,25 +11,21 @@
 
 // Den fedeste / mest kreative
 // Go crazy, visualiser over tid, CSS craziness, knock yourselves out
+fetchData();
+setInterval(fetchData, 10000);
 
-const inQueueElement = document.getElementById("inQueue");
+const inQueueElement = document.getElementById("inQueueNumber");
 
-async function fetchData() {
-  try {
-    const response = await fetch("https://kea-alt-del.dk/kata-distortion/");
-    const data = await response.json();
-    if (parseInt(inQueueElement.textContent) !== data.inQueue) {
+function fetchData() {
+  fetch("https://kea-alt-del.dk/kata-distortion/")
+    .then((response) => response.json())
+    .then((queueNumber) => {
+      console.log("queueNumber", queueNumber);
+      inQueueElement.innerHTML = `${queueNumber.inQueue}`;
       inQueueElement.classList.add("grow");
-    }
-    inQueueElement.textContent = data.inQueue;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
+    });
 }
 
 inQueueElement.addEventListener("transitionend", () => {
   inQueueElement.classList.remove("grow");
 });
-
-fetchData();
-setInterval(fetchData, 10000);
