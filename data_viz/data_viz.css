@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #67d2a4;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.number {
+  font-size: 6rem;
+  font-weight: bold;
+  transition: transform 0.5s ease;
+}
+.grow {
+  transform: scale(1.5);
+}
