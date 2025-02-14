@@ -25,9 +25,17 @@
 // 10. Udbyg med et theme mere og inddrag flere styles fx skriftfarve, border-color mm.
 
 // Dropdown selection
-document.querySelector("select").addEventListener("change", selectChange);
+const theStoredTheme = localStorage.getItem("storedTheme");
+console.log("storedTheme", theStoredTheme);
+if (theStoredTheme !== null) {
+  document.querySelector("body").dataset.theme = theStoredTheme;
+}
+document.querySelector("select").addEventListener("change", theChange);
 
-function selectChange(event) {
-  console.log("change", event.target.value);
-  document.body.setAttribute("data-theme", event.target.value);
+function theChange(event) {
+  const chosenTheme = event.target.value;
+  //console.log("change", chosenTheme);
+
+  document.querySelector("body").dataset.theme = chosenTheme;
+  localStorage.setItem("storedTheme", chosenTheme);
 }
